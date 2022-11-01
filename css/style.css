@@ -1,0 +1,98 @@
+
+:root {
+    --main-color: white;
+    --secondary-color: #329287;
+    --other-color :rgb(156, 155, 155);
+    --section-width:800px;
+    --section-height: 300px
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.slider-container {
+    margin: 30px auto;
+    width: var(--section-width);
+    height: var(--section-height);
+    position: relative;
+}
+.slider-container img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+    width: var(--section-width);
+    height: var(--section-height);
+    margin: 10px auto;
+}
+.slider-container img.active {
+    opacity: 1;
+}
+.slider-container .slide-number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 6px;
+}
+.slider-controls {
+    width: var(--section-width);
+    margin: auto;
+    overflow: hidden;
+}
+.slider-controls .prev,
+.slider-controls .next {
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    font-size: 16px;
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+    user-select: none;
+}
+.slider-controls .prev {
+    float: left;
+}
+.slider-controls .next {
+    float: right;
+}
+.slider-controls .prev.disabled,
+.slider-controls .next.disabled {
+    background-color: var(--other-color);
+    cursor: no-drop;
+}
+.slider-controls .indicators {
+    width: 60%;
+    float: left;
+}
+.slider-controls .indicators ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+.slider-controls .indicators ul li {
+    display: inline-block;
+    background-color:var(--other-color);
+    color: var(--main-color);
+    font-weight: bold;
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+}
+.slider-controls .indicators ul li.active  {
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
